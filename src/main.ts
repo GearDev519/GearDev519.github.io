@@ -18,7 +18,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <p class="read-the-docs text-9xl">
       Click on the Vite and TypeScript logos to learn more
     </p>
+    <div class="text-lime-200">
+          <p>KUYYAI</p>
+    </div>
   </div>
+
 `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
