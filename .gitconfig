@@ -1,0 +1,91 @@
+[core]
+editor = code --wait
+autocrlf = input
+whitespace = trailing-space,space-before-tab
+excludesfile = ~/.gitignore_global
+
+[color]
+ui = auto
+
+[init]
+defaultBranch = main
+
+[pull]
+rebase = true
+
+[push]
+default = current
+
+[merge]
+tool = vscode
+conflictstyle = diff3
+
+[mergetool "vscode"]
+cmd = code --wait $MERGED
+
+[diff]
+tool = vscode
+
+[difftool "vscode"]
+cmd = code --wait --diff $LOCAL $REMOTE
+
+[alias]
+co = checkout
+br = branch
+unstage = reset HEAD --
+last = log -1 HEAD
+lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+amend = commit --amend
+undo = reset --soft HEAD^
+stash-all = stash save --include-untracked
+tags = tag -l
+branches = branch -a
+remotes = remote -v
+contributors = shortlog --summary --numbered
+filetrail = log --follow -p -w
+mergetrail = log --ancestry-path --merges
+untracked = ls-files --others --exclude-standard
+
+[credential]
+helper = cache --timeout=3600
+
+[help]
+# autocorrect = 1
+
+[rerere] # remember frequent solution to auto-solve later conflicts
+enabled = true
+
+[fetch]
+# clean up local if remote branch deleted
+prune = true
+
+[branch]
+autosetuprebase = always
+
+[commit]
+template = ~/.gitmessage
+
+[rebase]
+autosquash = true
+
+[url "git@github.com:"]
+insteadOf = "gh:"
+pushInsteadOf = "github:"
+pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+insteadOf = "gst:"
+pushInsteadOf = "gist:"
+pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+insteadOf = "gist:"
+
+[filter "lfs"]
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true

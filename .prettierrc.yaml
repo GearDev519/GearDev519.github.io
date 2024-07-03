@@ -1,0 +1,61 @@
+experimentalTernaries: true
+proseWrap: always
+jsxSingleQuote: true
+singleQuote: true
+overrides:
+  - files:
+      - '*.yml'
+      - '*.yaml'
+    options:
+      parser: yaml
+      singleQuote: true
+plugins:
+  - 'prettier-plugin-css-order'
+  - 'prettier-plugin-style-order'
+  - '@trivago/prettier-plugin-sort-imports'
+  - 'prettier-plugin-organize-attributes'
+  - 'prettier-plugin-tailwindcss' # ! ALWAYS LAST
+
+# organize attributes
+attributeGroups:
+  - '$KEY'
+  - '$REF'
+  - '$FOR'
+  - '$ANGULAR_STRUCTURAL_DIRECTIVE'
+  - '$ANGULAR_ELEMENT_REF'
+  - '$ID'
+  - '$DEFAULT'
+  - 'role'
+  - '^data-'
+  - '^aria-'
+  - '$ANGULAR_ANIMATION'
+  - '$ANGULAR_ANIMATION_INPUT'
+  - '$ANGULAR_INPUT'
+  - '^is[A-Z]'
+  - '^on[A-Z]'
+  - '$ANGULAR_TWO_WAY_BINDING'
+  - '$ANGULAR_OUTPUT'
+  - 'style'
+  - 'className'
+
+# sort-imports
+importOrder:
+  - '^react'
+  - '^@?\\w'
+  - '^[./]'
+importOrderSeparation: true
+importOrderSortSpecifiers: true
+
+# css order
+cssDeclarationSorterOrder: 'smacss'
+
+# tailwindcss
+tailwindConfig: './tailwind.config.js' # if tailwind.config.js not in root, or where .prettierrc is
+tailwindAttributes: # sort class name when writing tailwindcss outside html, j(t)sx tag, default: are class (vanilla), className (react), ngClass (angular)
+  - 'variants'
+tailwindFunctions:
+  - 'twMerge'
+  - 'clsx'
+  - 'cn' # custom: manually twMerge + clsx
+tailwindPreserveDuplicates: false # true if use templating language (fluid, blade, etc)
+

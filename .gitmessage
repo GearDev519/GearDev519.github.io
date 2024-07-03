@@ -1,0 +1,43 @@
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+
+# Allowed <type> values:
+# feat (new feature)
+# fix (bug fix)
+# docs (changes to documentation)
+# style (formatting, missing semi colons, etc; no code change)
+# refactor (refactoring production code)
+# test (adding missing tests, refactoring tests; no production code change)
+# chore (updating grunt tasks etc; no production code change)
+
+# Allowed <scope> values:
+# ui: User interface components and styling
+# form: Form-related components and logic
+# validation: Input validation and error handling
+# state: Application state management (e.g., Redux, Context)
+# api: API integration and request handling
+# auth: Authentication and authorization
+# routing: Navigation and URL routing
+# utils: Utility functions and helpers
+# hooks: Custom React hooks
+# tests: Unit and integration tests
+# types: TypeScript type definitions and interfaces
+# config: Project configuration and build settings
+# docs: Documentation updates
+# deps: Dependency updates or management
+# perf: Performance optimizations
+# a11y: Accessibility improvements
+# i18n: Internationalization and localization
+# ci: Continuous Integration and deployment
+# assets: Static assets like images, fonts, etc.
+
+
+# <subject> should be a short description (50 chars or less)
+
+# <body> should provide more detailed explanatory text, if necessary
+
+# <footer> should contain any information about Breaking Changes
+# and is also the place to reference GitHub issues that this commit closes
